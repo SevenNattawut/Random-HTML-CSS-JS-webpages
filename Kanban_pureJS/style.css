@@ -1,0 +1,175 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 4em 0 0;
+    align-items: center;
+
+    font-family: cursive;
+    font-weight: bold;
+
+    background-color: rgb(48, 93, 72);
+}
+
+.addTodo {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.addTodo-inputBox {
+    display: block;
+    height: 45px;
+    width: 23em;
+
+    margin-right: 3em;
+}
+
+.addTodo-inputBox::after {
+    content: '';
+    height: 7px;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    display: block
+}
+
+.addTodo-label {
+    position: absolute;
+    top: 0.6em;
+    transition: top 0.3s ease-in-out;
+
+    font-size: 1.2rem;
+    font-family: cursive;
+    font-weight: bold;
+    color: white;
+
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.addTodo-input {
+    height: 45px;
+    width: 100%;
+    font-size: 1.5rem;
+    font-family: cursive;
+    font-weight: bold;
+
+    color: rgb(255, 255, 255);
+
+    border: none;
+
+    background-color: transparent;
+
+    transition: border 0.3s ease-in-out;
+
+    outline: none;
+}
+
+.addTodo-input:focus + .addTodo-label {
+    top: -1em !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.addTodo-input:valid + .addTodo-label {
+    top: -1em !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.addTodo-input:focus {
+    outline: none;
+    transition: border 0.3s ease-in-out;
+}
+
+.addTodo-btn {
+    position: relative;
+    font-size: 1.2rem;
+    width: 4em;
+    border-radius: 50px;
+    height: 50px;
+
+    font-family: cursive;
+    font-weight: bold;
+
+    border: none;
+    background-color: rgb(226, 226, 226);
+}
+
+.addTodo-btn:hover {
+    background-color: rgb(173, 173, 173);
+}
+
+.kb-table {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    height: 85%;
+    overflow: hidden;
+    margin: 1.5em auto 0;
+}
+
+.kb-section {
+    align-items: center;
+    width: 30%;
+    height: 90%;
+    border: none;
+}
+
+.kb-title {
+    text-align: center;
+    border: none;
+}
+
+.todo-title {
+    background-color: rgb(244, 255, 150);
+}
+
+.wip-title {
+    background-color: rgb(255, 150, 150);
+}
+
+.done-title {
+    background-color: rgb(150, 255, 150);
+}
+
+.kb-list {
+    height: 84%;
+    overflow: auto;
+    border: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.kb-list::-webkit-scrollbar {
+    display: none;
+}
+
+.kb-item {
+    height: 10%;
+    display: flex;
+    border: none;
+    margin: 12px 12px 8px;
+    background-color: rgb(255, 209, 150);
+}
+
+.kb-item span {
+    text-overflow: clip;
+    font-size: 1.5rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+.kb-remove {
+    width: 100%;
+    height: 50px;
+    background-color: brown;
+}

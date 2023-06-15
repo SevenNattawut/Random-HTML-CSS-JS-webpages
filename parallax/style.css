@@ -1,0 +1,134 @@
+body {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+    font-family: cursive;
+    color: white;
+
+    scroll-behavior: smooth;
+}
+
+/* hide scrollbar, but still functional */
+::-webkit-scrollbar { 
+    display: none;
+}
+
+.parallax {
+    background-image: url("./skyBg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+h1 {
+    font-size: 7rem;
+    color: rgb(255, 245, 152);
+    mix-blend-mode: difference;
+    font-weight: bold;
+
+}
+
+h3 {
+    font-size: 2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-form {
+    position: absolute;
+    top: 300px;
+    align-items: center;
+    z-index: 100;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    width: 48em;
+
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.input-form::after {
+    content: "";
+    width: 50em;
+    height: 4px;
+    border-radius: 5px;
+    background-color: white;
+    display: block;
+}
+
+.input-box {
+    width: 100%;
+    font-size: 2em;
+
+    font-family: cursive;
+    font-weight: bold;
+    text-align: center;
+
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+}
+
+.label {
+    position: absolute;
+    top: -2em;
+    opacity: 30%;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-box:valid + .label {
+    top: -4em !important;
+    opacity: 100% !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-box:valid + .label > h3 {
+    font-size: 1.5em !important;
+    transition: all 0.3s ease-in-out;
+    content: "";
+}
+
+/* *** Content cannot be animated *** */
+
+.text-label::before {
+    content: "Leave your message here.";
+}
+
+.input-box:valid + .label > .text-label::before {
+    content: "Scroll down after you're done.";
+}
+
+.moon {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(255, 245, 152);
+    border-radius: 50%;
+
+    position: absolute;
+    bottom: 33%;
+    left: 15%;
+}
+
+.mt {
+    width: 100vw;
+    height: 300vh;
+    background: url("./mountain.png") bottom / contain no-repeat;
+
+    z-index: 10; /* front */
+}
+
+.display-text {
+    position: absolute;
+    bottom: 20%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}

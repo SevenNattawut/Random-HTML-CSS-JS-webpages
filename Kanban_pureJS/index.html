@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban_pureJS</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+    <div class="addTodo">
+        <div class="addTodo-inputBox">
+            <input class="addTodo-input" name="addTodo" id="addTodo-input" required/>
+            <span class="addTodo-label">Add new todo...</span>
+        </div>
+        <button class="addTodo-btn">Add!</button>
+    </div>
+    <div class="kb-table">
+        <div class="kb-section" ondrop="onDrop(event)" ondragover="allowDrop(event)">
+            <div class="kb-title todo-title">
+                <h1>To-do</h1>    
+            </div>
+            <div class="kb-list" id="todo">
+            </div>
+        </div>
+        <div class="kb-section" ondrop="onDrop(event)" ondragover="allowDrop(event)">
+            <div class="kb-title wip-title">
+                <h1>WIP.</h1>
+            </div>
+            <div class="kb-list" id="wip">
+            </div>
+        </div>
+        <div class="kb-section" ondrop="onDrop(event)" ondragover="allowDrop(event)">
+            <div class="kb-title done-title">
+                <h1>Done</h1>
+            </div>
+            <div class="kb-list" id="done">    
+            </div>
+        </div>
+    </div>
+    <div class="kb-remove" ondrop="onDrop(event)" ondragover="allowDrop(event)"></div>
+  </body>
+  <script src="./script.js"></script>
+</html>

@@ -1,0 +1,137 @@
+body {
+    background-image: url("./bg.jpg");
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+    background-position: top center;
+
+    font-family: cursive;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color:rgba(255, 255, 255, 1);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    /* no select or copy text on the webpage */
+    user-select: none;
+}
+
+
+.content {
+    position: fixed;
+    left: 7vw;
+    top: 15vh;
+    padding: 1.5em 0.75em 1.2em;
+    
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+
+    box-shadow:inset 0px 0px 6px 6px rgba(255, 255, 255, 0);
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the transparency here */
+}
+
+.blur-bg {
+    border: none;
+}
+
+
+.cd-text {
+    font-size: 2.5em;
+    font-weight: bold;
+    padding-bottom: -0.5em;
+
+}
+
+.cool-box {
+    border: 10px solid rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.yearNumber {
+    font-size: 8em;
+    color: #D94A7E;
+    margin: 0 auto 0 auto; /* -1.5em */
+    font-weight: bold;
+}
+
+.countdown {
+    display: inline-block;
+    font-size: 1.7em;
+    padding: 0 0.5em 0.5em;
+}
+
+.countdown span {
+    display: block;
+    font-size: 5rem;
+}
+
+.timer{
+    color: #F2EEB6;
+}
+
+.info {
+    position: fixed;
+    bottom:2%;
+    right:2%;
+    grid-template-columns: auto 1fr; /* Adjust column widths as needed */
+    gap: 10px; /* Adjust the gap between rows as needed */
+}
+  
+.info-row {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Adjust column widths as needed */
+}
+  
+.info-label {
+    font-weight: bold;
+}
+  
+.info-value {
+    font-weight: normal;
+}
+
+/* for mobile size */
+@media screen and (max-width:768px){
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1em;
+    }
+    
+    .cd-text {
+        font-size: 1.2em;
+        padding-bottom: -0.5em;
+    
+    }
+    
+    .yearNumber {
+        font-size: 4em;
+    }
+    
+    .countdown {
+        font-size: 1.1em;
+        display: block;
+    }
+
+    .countdown span {
+        display: block;
+        font-size: 4rem;
+    }
+
+    .colon {
+        display: none;
+    }
+
+    .info {
+        display: none;
+    }
+}

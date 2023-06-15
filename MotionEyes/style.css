@@ -1,0 +1,157 @@
+body {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+}
+
+.bgImage {
+    position: relative;
+    height: 100vh;
+    width: calc(100vh * 906/1200);
+    background-image: url("./bg.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.eyes {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* face shadow */
+/* .face::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -15px;
+    left: -15px;
+    box-shadow: 15px 15px 0 0 rgba(0, 0, 0, 0.04);
+
+    border-radius: 50%;
+
+} */
+
+.eye {
+    display: inline-block;
+
+    width: 4vh;
+    height: 4vh;
+
+    border-radius: 50%;
+
+    background-color: rgb(255, 255, 255);
+
+    position: relative;
+
+    margin: 0 2px 0;
+}
+
+.eye::after {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+
+    bottom: -20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    content: '';
+
+    background-color: rgb(0, 0, 0);
+
+    z-index: 1;
+}
+
+/* .mouth {
+    width:10rem;
+    height:5rem;
+    border-radius: 0 0 10rem 10rem;
+    background-color: rgb(132, 0, 0);
+    margin: 30px 0 0 0;
+} */
+
+/* eyes position to match the faces */
+
+/* Chihiro */
+#chihiro {
+    left: calc(50% - 4.53%);
+    top: 19.6%;
+    transform: rotate();
+}
+
+#kotama {
+    left: calc(50% - 26.55%);
+    top: 43%;
+    transform: rotate(-8deg);
+}
+
+#himari {
+    left: calc(50% + 14%);
+    top: 30%;
+    transform: rotate(-12deg);
+}
+
+#maki {
+    left: calc(50% - 35.6%);
+    top: 59%;
+    transform: rotate(-7deg);
+}
+
+#hare {
+    left: calc(50% - 14.2%);
+    top: 59%;
+    transform: rotate(-7deg);
+}
+
+@media screen and (min-width: 780px) {
+    .info {
+        font-family: cursive;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        color:rgb(0, 0, 0);
+        text-shadow:
+          -2px -2px 0 #ffffff,  
+          2px -2px 0 #ffffff,
+          -2px 2px 0 #ffffff,
+          2px 2px 0 #ffffff;
+
+        position: fixed;
+        bottom:2%;
+        right:2%;
+        grid-template-columns: auto 1fr; /* Adjust column widths as needed */
+        gap: 10px; /* Adjust the gap between rows as needed */
+    }
+    
+    .info-row {
+        display: grid;
+        grid-template-columns: auto 1fr; /* Adjust column widths as needed */
+    }
+    
+    .info-label {
+        font-weight: bold;
+    }
+    
+    .info-value {
+        font-weight: normal;
+    }
+}
