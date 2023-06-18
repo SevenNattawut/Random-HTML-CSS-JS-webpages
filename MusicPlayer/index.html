@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="music-card">
+        <div class="music-cover" id="cover">
+        </div>
+        <div class="music-detail">
+            <div class="sliding-text">
+                <!-- double text for seamless text sliding -->
+                <span class="music-name">ソロキャンの嗜み (Yuru Camp OST)</span>
+                <span class="music-name">ソロキャンの嗜み (Yuru Camp OST)</span>
+            </div>
+        </div>
+        <div class="author">
+            Akiyuki Tateyama
+        </div>
+        <div class="music-control">
+            <div class="timeline">
+                <span class="time" id="current-time">0:00</span>
+                <input class="seek-bar" id="seek-bar" type="range" min="0" max="100" value="0">
+                <span class="time" id="full-time">0:00</span>
+                <audio>
+                    <source src="./musicPlaylist/ソロキャンの嗜み.mp3" type="audio/mp3">
+                </audio>
+            </div>
+            <div class="button-group">
+                <button class="skip-backward"></button>
+                <button class="no-repeat" id="repeat"></button>
+                <button class="play" id="play-pause"></button>
+                <button class="volume"></button>
+                <button class="skip-forward"></button>
+            </div>
+        </div>
+        <div class="card-control">
+            <button class="previous"></button>
+            
+            <button class="next"></button>
+        </div>
+    </div>
+    
+</body>
+<script src="./script.js"></script>
+</html>

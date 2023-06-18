@@ -1,0 +1,304 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+
+    background-image: linear-gradient(
+            rgb(252, 229, 175),
+            rgb(252, 229, 175),
+            rgb(210, 143, 191),
+            rgb(210, 143, 191),
+            rgb(53, 50, 107),
+            rgb(53, 50, 107),
+            rgb(34, 101, 104),
+            rgb(34, 101, 104),
+            rgb(135, 236, 240),
+            rgb(135, 236, 240),
+            rgb(252, 229, 175),
+            rgb(252, 229, 175));
+    background-size: 800% 800%;
+    animation: gradient 30s linear infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.music-card {
+    width: 350px;
+    height: 500px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: none;
+
+    box-shadow: 0 10px 6px -6px rgb(7,7,7);
+}
+
+.music-cover {
+    background-image: url("./Yurucamp_main.jpg");
+    background-size: cover;
+    border-radius: 10px 10px 0 0;
+    width: 350px;
+    height: 280px;
+    margin: 0 0 20px;
+    transition: all 0.1s ease-in-out;
+}
+
+.music-cover-play {
+    background-image: url("./Yurucamp_main.jpg");
+    background-size: cover;
+
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 30px auto 20px;
+
+    animation: spin 10s infinite linear;
+    transition: all 0.1s ease-in-out;
+}
+
+.author {
+    font-size: 0.8rem;
+    font-weight: lighter;
+}
+
+.music-detail {
+    width: 80%;
+    height: 2.5rem;
+
+    overflow: hidden;
+}
+
+.music-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 80%;
+
+    margin: 1rem auto 0;
+}
+
+.card-control {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.sliding-text {
+    display: flex;
+    width: 100%;
+    animation: toLeft 9.5s infinite linear;
+}
+
+.music-name {
+    white-space: nowrap;
+}
+
+.music-name::before {
+    content: "Now Playing: ";
+    margin-left: 1rem;
+}
+
+
+/*********** Baseline, reset styles ***********/
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgb(217, 217, 217);
+    cursor: pointer;
+    width: 100%;
+
+    position: relative;
+    top:-7px
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+    outline: none !important;
+}
+
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: transparent;
+    border-radius: 0.25rem;
+    height: 0.1rem;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    margin-top: -5px;
+    /* Centers thumb on the track */
+    background-color: #000000;
+    border-radius: 0.5rem;
+    height: 0.75rem;
+    width: 0.75rem;
+}
+
+/*********** Firefox styles ***********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+    background-color: #dedede;
+    border-radius: 0.5rem;
+    height: 0.5rem;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+    background-color: #000000;
+    border: none;
+    /*Removes extra border that FF applies*/
+    border-radius: 0.5rem;
+    height: 1rem;
+    width: 1rem;
+}
+
+.slider-track::-moz-range-progress {
+    background: rgb(0, 0, 0);
+}
+
+.seek-bar {
+    margin: auto 1em 0;
+}
+
+.time {
+    font-size: 0.8rem !important;
+    font-weight: lighter;
+    width: 2.5rem;
+    text-align: center;
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+audio {
+    display: none;
+}
+
+.button-group {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem 0 0;
+}
+
+button {
+    width: 40px;
+    height: 40px;
+
+    background-color: transparent;
+    border: transparent;
+    outline: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-size: 50%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    transition: background-position-y 0.1s;
+}
+
+button:hover {
+    background-position-y: 5px;
+    transition: background-position-y 0.1s;
+}
+
+.play {
+    background-image: url("./btn_icons/play.png");
+}
+
+.pause {
+    background-image: url("./btn_icons/pause.png");
+    background-size: 60%;
+}
+
+.skip-forward {
+    background-image: url("./btn_icons/skip-track.png");
+}
+
+.skip-backward {
+    background-image: url("./btn_icons/skip-back.png");
+}
+
+.volume {
+    background-image: url("./btn_icons/volume.png");
+    background-size: 70%;
+}
+
+.mute {
+    background-image: url("./btn_icons/mute.png");
+    background-size: 70%;
+}
+
+.repeat {
+    background-image: url("./btn_icons/repeat.png");
+    background-size: 60%;
+}
+
+.no-repeat {
+    background-image: url("./btn_icons/no-repeat.png");
+    background-size: 60%;
+}
+
+.next {
+    background-image: url("./btn_icons/next.png");
+}
+
+.previous {
+    background-image: url("./btn_icons/previous.png");
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes spin {
+    0% {
+        rotate: 0deg;
+    }
+
+    50% {
+        rotate: 180deg;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+}
+
+@keyframes toLeft {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-207%);
+    }
+}
