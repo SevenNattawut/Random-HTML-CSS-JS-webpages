@@ -74,9 +74,20 @@ body {
 
 .music-detail {
     width: 80%;
-    height: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
 
-    overflow: hidden;
+.slide-text {
+    white-space: nowrap;
+    align-self: start;
+}
+
+.sliding {
+    display: flex;
+    animation: toLeft 4s infinite linear;
 }
 
 .music-control {
@@ -96,19 +107,13 @@ body {
     margin: auto;
 }
 
-.sliding-text {
-    display: flex;
-    width: 100%;
-    animation: toLeft 9.5s infinite linear;
-}
-
 .music-name {
     white-space: nowrap;
+    margin-right: 1em;
 }
 
 .music-name::before {
     content: "Now Playing: ";
-    margin-left: 1rem;
 }
 
 
@@ -295,10 +300,10 @@ button:hover {
 
 @keyframes toLeft {
     from {
-        transform: translateX(0%);
+        transform: translateX(0);
     }
 
     to {
-        transform: translateX(-207%);
+        transform: translateX(-50%);
     }
 }
