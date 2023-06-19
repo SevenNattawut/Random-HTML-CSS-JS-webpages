@@ -5,8 +5,12 @@
     const currentTime = document.getElementById("current-time");
     const fullTime = document.getElementById("full-time");
     const coverImg = document.getElementById("cover");
+    const volumeSet = document.getElementById("volume-set");
+    const volumeBtn = document.getElementById("volume");
+    const volDiv = document.getElementById("vol-div");
 
     let repeatBtn = document.getElementById("repeat");
+    let currentVolumeLvl = 100;
 
     function updateProgress() {
         const tempSliderValue = progressBar.value; 
@@ -72,6 +76,49 @@
         }
     }
 
+    function adjustVol() {
+        const currentVol = volumeSet.value/100; // change to .00 decimal
+
+        currentSong.volume = currentVol;
+        currentVolumeLvl = currentVol;
+
+        if (currentVolumeLvl > 0) {
+            volumeBtn.className = "volume";
+        }
+        else {
+            volumeBtn.className = "mute";
+        }
+    }
+
+    function showVolSlide() {
+        if (volDiv.style.display !== "flex") {
+            volDiv.style.display = "flex";
+        }
+    }
+
+    function hideVolSlide() {
+        setTimeout(() => {
+            if (volDiv.style.display === "flex") {
+                volDiv.style.display = "none";
+            }
+        }, 5000);
+    }
+
+    function toggleMuteSong() {
+        if (volumeBtn.className === "volume") {
+            currentSong.volume = 0;
+            volumeBtn.className = "mute";
+            volumeSet.value = 0;
+        }
+        else {
+            if (currentVolumeLvl > 0) {
+                volumeBtn.className = "volume";
+            }
+            currentSong.volume = currentVolumeLvl/100;
+            volumeSet.value = currentVolumeLvl;
+        }
+    }
+
     function run() {
         progressBar.addEventListener("input", updateProgress);
         progressBar.addEventListener("input", updateSongProgress);
@@ -82,6 +129,10 @@
         progressBar.addEventListener("input", updateSongProgress);
         currentSong.addEventListener("ended", updateSongEnd);
         repeatBtn.addEventListener("click", repeatToggle);
+        volumeBtn.addEventListener("mouseenter", showVolSlide);
+        volumeSet.addEventListener("input", adjustVol);
+        volDiv.addEventListener("mouseleave",hideVolSlide);
+        volumeBtn.addEventListener("click", toggleMuteSong);
     }
 
     run();

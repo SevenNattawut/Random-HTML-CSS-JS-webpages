@@ -87,7 +87,7 @@ body {
 
 .sliding {
     display: flex;
-    animation: toLeft 4s infinite linear;
+    animation: toLeft 8s infinite linear;
 }
 
 .music-control {
@@ -115,7 +115,6 @@ body {
 .music-name::before {
     content: "Now Playing: ";
 }
-
 
 /*********** Baseline, reset styles ***********/
 input[type="range"] {
@@ -196,6 +195,18 @@ input[type="range"]::-moz-range-thumb {
 
 audio {
     display: none;
+}
+
+.volume-setting {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(112, 112, 112);
+    display: none;
+    align-items: center;
+    justify-content: center;
 }
 
 .button-group {
