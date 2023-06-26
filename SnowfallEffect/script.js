@@ -56,11 +56,14 @@
         const snowBalls = createSnowFx(canvas, numOfSnow);
         
     
-        setInterval(() => {
+        function animate() {
             canvasContext.clearRect(0, 0, canvas.width, canvas.height);
             snowBalls.forEach((snow) => drawSnow(canvasContext, snow));
             snowBalls.forEach((snow) => moveSnow(canvas, snow));
-        }, 10)
+            requestAnimationFrame(animate); // better than setInterval, animation will be more smooth
+        }
+      
+        animate();
     }
 
     run()
