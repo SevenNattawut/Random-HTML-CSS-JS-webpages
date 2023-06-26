@@ -55,19 +55,61 @@
     function createkeyDisplay(keyInput) {
         const newKey = document.createElement("div");
         newKey.className = "key-input";
-        
+        console.log(keyInput);
         switch (keyInput) {
             case "ArrowUp":
-                newKey.innerHTML = "&uarr;"
+                newKey.innerHTML = "&uarr;";
                 break;
             case "ArrowDown":
-                newKey.innerHTML = "&darr;"
+                newKey.innerHTML = "&darr;";
                 break;
             case "ArrowLeft":
-                newKey.innerHTML = "&larr;"
+                newKey.innerHTML = "&larr;";
                 break;
             case "ArrowRight":
-                newKey.innerHTML = "&rarr;"
+                newKey.innerHTML = "&rarr;";
+                break;
+            case "Tab":
+                newKey.innerHTML = "&#8644;";
+                break;
+            case "Meta":
+                newKey.innerHTML = "&#8281;";       // windows key
+                break;
+            case "Enter":
+                newKey.innerHTML = "&crarr;";
+                break;
+            case " ":
+                newKey.innerHTML = "&#8215;";       // spacebar
+                break;
+            case "Control":
+                newKey.innerHTML = "Ctrl";
+                break;
+            case "Shift":
+                newKey.innerHTML = "&uArr;";
+                break;
+            case "CapsLock":
+                newKey.innerHTML = "Caps";
+                break;
+            case "Pause":
+                newKey.innerHTML = "&#8214;";
+                break;
+            case "ScrollLock":
+                newKey.innerHTML = "Scrl";
+                break;
+            case "Insert":
+                newKey.innerHTML = "Ins";
+                break;
+            case "PageUp":
+                newKey.innerHTML = "PgUp";
+                break;
+            case "PageDown":
+                newKey.innerHTML = "PgDn";
+                break;
+            case "Delete":
+                newKey.innerHTML = "Del";
+                break;
+            case "Backspace":
+                newKey.innerHTML = "&#8672;";
                 break;
             default:
                 newKey.innerHTML = keyInput;
@@ -123,7 +165,7 @@
         // konami code
         document.addEventListener("keydown", (event) => {
             // check combo sequence, if user input right sequence, add konamiIndex, else, reset konamiIndex
-            event.key === konamiCombo[konamiIndex] ? konamiIndex++ : konamiIndex = 0;
+            event.key.toLowerCase() === konamiCombo[konamiIndex] ? konamiIndex++ : konamiIndex = 0;
 
             if (runAnimation === false && konamiIndex === konamiCombo.length) {
                 runAnimation = true;
