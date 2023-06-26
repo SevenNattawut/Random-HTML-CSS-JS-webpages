@@ -115,8 +115,9 @@
             if (konamiIndex === 0) {
                 keyDisplay.innerHTML = "";
             }
-
             keyDisplay.appendChild(createkeyDisplay(event.key));
+            keyDisplay.classList.add("show");
+            setTimeout(() => keyDisplay.classList.remove("show"), 1000);
         });
 
         // konami code

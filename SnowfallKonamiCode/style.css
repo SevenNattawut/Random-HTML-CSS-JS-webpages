@@ -18,6 +18,10 @@ body {
     justify-content: center;
 
     column-gap: 10px;
+
+    opacity: 0;
+    
+    transition: opacity 1.5s ease-in-out;
 }
 
 .key-input {
@@ -32,4 +36,9 @@ body {
     font-size: 2em;
     font-family: cursive;
     color: white;
+}
+
+.show {
+    opacity: 1 !important;
+    transition: none !important;
 }
