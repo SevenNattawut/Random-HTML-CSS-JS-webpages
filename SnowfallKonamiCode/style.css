@@ -1,0 +1,35 @@
+body {
+    background-image: url("./bg.png");
+    background-size: cover;
+    overflow: hidden;
+    height: 100%;
+    
+    margin: 0;
+    padding: 0;
+}
+
+.key-input-show {
+    width: 100%;
+
+    position: absolute;
+    bottom: 3em;
+    
+    display: flex;
+    justify-content: center;
+
+    column-gap: 10px;
+}
+
+.key-input {
+    width: 3em;
+    height: 3em;
+    border-radius: 10px;
+    background-color: rgba(31, 31, 31, 0.808);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2em;
+    font-family: cursive;
+    color: white;
+}
