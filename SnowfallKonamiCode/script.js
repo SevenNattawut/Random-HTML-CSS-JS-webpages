@@ -121,6 +121,7 @@
 
     function run() {
 
+        // Konami combo sequence
         const konamiCombo = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
         let konamiIndex = 0;
         let runAnimation = false;
@@ -153,6 +154,7 @@
             }
         }
 
+        // manage input display section
         document.addEventListener("keydown", (event) => {
             if (konamiIndex === 0) {
                 keyDisplay.innerHTML = "";
@@ -165,7 +167,7 @@
         // konami code
         document.addEventListener("keydown", (event) => {
             // check combo sequence, if user input right sequence, add konamiIndex, else, reset konamiIndex
-            event.key.toLowerCase() === konamiCombo[konamiIndex] ? konamiIndex++ : konamiIndex = 0;
+            event.key.toLowerCase() === konamiCombo[konamiIndex].toLowerCase() ? konamiIndex++ : konamiIndex = 0;
 
             if (runAnimation === false && konamiIndex === konamiCombo.length) {
                 runAnimation = true;

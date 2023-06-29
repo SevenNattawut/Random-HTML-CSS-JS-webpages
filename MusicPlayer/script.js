@@ -91,17 +91,19 @@
     }
 
     function showVolSlide() {
-        if (volDiv.style.display !== "flex") {
-            volDiv.style.display = "flex";
+        if (volDiv.classList.contains("hide-fade")) {
+            volDiv.classList.remove("hide-fade");
+            volDiv.classList.add("show");
         }
     }
 
     function hideVolSlide() {
         setTimeout(() => {
-            if (volDiv.style.display === "flex") {
-                volDiv.style.display = "none";
+            if (volDiv.classList.contains("show")) {
+                volDiv.classList.remove("show");
+                volDiv.classList.add("hide-fade");
             }
-        }, 5000);
+        }, 3000);
     }
 
     function toggleMuteSong() {

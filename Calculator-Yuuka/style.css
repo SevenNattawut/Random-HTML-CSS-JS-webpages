@@ -1,0 +1,249 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Yuuka's hair color */
+    background-image: linear-gradient(
+        175deg,
+        rgb(120, 122, 176) 22%,
+        rgb(215,224,255) 24%,
+        rgb(215,224,255) 33%,
+        rgb(120, 122, 176) 35%,
+        rgb(48, 45, 99) 80%
+    );
+    
+    font-family: Agdasima;
+    font-size: 2em;
+    color: rgb(164,232,255);
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    height: 600px;
+    background-color: rgb(21, 26, 32);
+    
+}
+
+.top, .bottom {
+    background-image: url("./asset/cap_off.svg");
+    height: 64px;
+    width: 400px;
+    transform-origin: center;
+    transform: translate(0, 20%);
+}
+
+.bottom {
+    transform: rotate(180deg) translate(0, 20%);
+}
+
+.top-on, .bottom-on {
+    background-image: url("./asset/cap_on.svg");
+    height: 64px;
+    width: 400px;
+    transform-origin: center;
+    transform: translate(0, 20%);
+}
+
+.bottom-on {
+    transform: rotate(180deg) translate(0, 20%);
+}
+
+
+.dot {
+    background-color: rgb(217, 217, 217);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.right-btn {
+    position: absolute;
+    background-color: rgb(164,232,255);
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-left: 330px;
+    border: solid 5px rgb(0, 59, 70);
+}
+
+.switch-btnset {
+    position: absolute;
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+    margin-top: 180px;
+}
+
+.switch-btnset-sub {
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.switch-btn{
+    width: 20px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.switch-btn::before {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    content: '';
+    margin-left: 5px;
+    margin-top: 3px;
+}
+
+.switch-btn::after {
+    width: 15px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: rgb(217, 217, 217);
+    position: absolute;
+    content: '';
+    margin-left: 3px;
+    margin-top: 53px;
+}
+
+.display {
+    background-color: transparent;
+
+    margin-top: 21%;
+    margin-bottom: 24%;
+
+    width:80%;
+    height: 2em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    outline: none;
+
+    font-family: Agdasima;
+    font-size: 1.25em;
+    text-overflow: clip;
+    color: rgb(164,232,255);
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.num-btn
+{
+    width: 2em;
+    height: 2em;
+    display: flex;
+    border-radius: 50%;
+
+    justify-content: center;
+    align-items: center;
+
+    /* it is impossible to do curve/circular gradient border with transparent background, using black background as an alternative way */
+    background: linear-gradient(rgb(21, 26, 32), rgb(21, 26, 32)) padding-box,
+    linear-gradient(135deg,
+        rgb(164,232,255) 10%,
+        rgb(18,97,242)
+    ) border-box;
+    border: 4px solid transparent;
+
+    font-family: Agdasima;
+    color: rgb(164,232,255);
+    font-size: 1em;
+
+    transform-origin: center;
+    transform: rotate(-45deg);
+}
+
+.numpad-col {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 57px;
+
+    transform-origin: center;
+    transform: rotate(45deg);
+    gap:20px;
+}
+
+.numpad-row {
+    display: flex;
+    gap:20px;
+}
+
+.mini-btnset {
+    position:relative;
+    right: -100px;
+    top: -5px
+}
+
+.mini-btnset-col {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transform-origin: center;
+    transform: rotate(-45deg);
+    gap:5px;
+}
+
+.mini-btnset-row {
+    display: flex;
+    gap:5px;
+}
+
+.other-btn {
+    width: 2em;
+    height: 2em;
+    display: flex;
+    border-radius: 50%;
+
+    justify-content: center;
+    align-items: center;
+
+    /* it is impossible to do curve/circular gradient border with transparent background, using black background as an alternative way */
+    background: linear-gradient(rgb(21, 26, 32), rgb(21, 26, 32)) padding-box,
+    linear-gradient(135deg,
+        rgb(164,232,255) 10%,
+        rgb(18,97,242)
+    ) border-box;
+    border: 4px solid transparent;
+
+    font-family: Agdasima;
+    color: rgb(164,232,255);
+    font-size: 0.6em;
+    font-weight: bold;
+
+    transform: rotate(45deg);
+}
+
+.move-up {
+    margin-top: -115px;
+    margin-left: 30px;
+}

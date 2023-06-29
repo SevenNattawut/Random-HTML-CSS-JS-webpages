@@ -203,11 +203,22 @@ audio {
     height: 40px;
     border-radius: 20px;
     border: none;
-    background-color: rgb(112, 112, 112);
     display: none;
+    background-color: rgb(112, 112, 112);
     align-items: center;
     justify-content: center;
 }
+
+.show {
+    opacity: 1;
+    display: flex !important;
+}
+
+.hide-fade {
+    opacity: 0;
+    transition: opacity 2s, display 4s;
+}
+
 
 .button-group {
     width: 100%;

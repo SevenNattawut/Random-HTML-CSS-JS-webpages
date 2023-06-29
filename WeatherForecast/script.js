@@ -1,0 +1,1 @@
+// API link: https://api.openweathermap.org/data/2.5/forecast?lat=13.7524938&lon=100.4935089&appid=c314aa01b8196dbae970b651ab2101ba
