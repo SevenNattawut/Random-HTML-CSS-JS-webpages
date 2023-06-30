@@ -45,6 +45,7 @@ body {
     width: 400px;
     transform-origin: center;
     transform: translate(0, 20%);
+    z-index: 5;
 }
 
 .bottom {
