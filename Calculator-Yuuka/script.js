@@ -76,7 +76,6 @@
     // fold calculator
     function closeCal() {
         if (turnOn === true) {
-            turnOn = false;
             rightSwitch.style.marginLeft = "280px";
             topCap.classList.toggle("top");
             topCap.classList.toggle("top-on");
@@ -86,6 +85,7 @@
             setTimeout(() => calBody.style.display = "none", 1300);
             setTimeout(() => {
                 calArea.style.height = "24px"
+                turnOn = false;
             }, 1300);
         }
     }
@@ -93,7 +93,6 @@
     // unfold calculator
     function openCal() {
         if (turnOn === false) {
-            turnOn = true;
             topCap.classList.toggle("top");
             topCap.classList.toggle("top-on");
             botCap.classList.toggle("bottom");
@@ -101,7 +100,10 @@
             setTimeout(() => calArea.style.height = "600px", 100);
             setTimeout(() => calBody.style.display = "flex", 300);
             setTimeout(() => calBody.style.opacity = "1", 400);
-            setTimeout(() => rightSwitch.style.marginLeft = "330px", 1300);
+            setTimeout(() => {
+                rightSwitch.style.marginLeft = "330px"
+                turnOn = true;
+            }, 1300);
         }
     }
 
