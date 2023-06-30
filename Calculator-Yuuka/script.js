@@ -14,6 +14,7 @@
     const sub = document.getElementById("dif");
     const mul = document.getElementById("mul");
     const div = document.getElementById("div");
+    const dot = document.getElementById("dot");
 
     const equal = document.getElementById("equal");
     const del = document.getElementById("del");
@@ -24,20 +25,44 @@
 
     function addInput(event) {
         const btnContent = event.target.textContent;
-        console.log(displayVal[displayVal.length-1]);
-        if ((btnContent === "0" || isNaN(btnContent)) && displayVal.length == 0) {
-            // inout nothing if the first char is 0 or operator (including C)
+        console.log(btnContent);
+
+        if (displayVal === "Undefined") {
+            displayVal = "";
+        }
+
+        if ((btnContent === "0" || (isNaN(btnContent) && btnContent !== "-")) && displayVal.length == 0) {
+            // input nothing if the first char is 0 or operator (including C)
+            new Audio("./asset/typing-fx.mp3").play()
             return;
+        } else if ((btnContent === "+") && displayVal[displayVal.length-1] === "-" && displayVal.length == 1) {
+            // if user press + when there is only - in display (negative), change to positive
+            displayVal = "";
+            new Audio("./asset/typing-fx.mp3").play()
+        } else if ((btnContent === "-") && displayVal[displayVal.length-1] === "+") {
+            // if user press + when there is + in right-most display (positive), change to negative
+            displayVal = displayVal.slice(0, displayVal.length - 1) + btnContent;
+            new Audio("./asset/typing-fx.mp3").play()
         } else if ((btnContent === "*" || btnContent === "/") && (displayVal[displayVal.length-1] === "*" || displayVal[displayVal.length-1] === "/")) {
             // if user press * or / after * or /, replace the operator
             displayVal = displayVal.slice(0, displayVal.length - 1) + btnContent;
+            new Audio("./asset/typing-fx.mp3").play()
         }else if (btnContent === "C"){
             displayVal = ""
+            new Audio("./asset/clear-fx.mp3").play()
         } else if (btnContent === "=") {
             let result = eval(displayVal);
+            if (result == "Infinity") {
+                result = "Undefined"
+            } else if (!Number.isInteger(result)) {
+                result = result.toFixed(3);
+            } else {
+            }
             displayVal = result.toString();
+            new Audio("./asset/eval-fx.mp3").play()
         } else {
             displayVal += btnContent;
+            new Audio("./asset/typing-fx.mp3").play()
         }
         display.innerHTML = displayVal;
     }
@@ -57,6 +82,7 @@
         sub.addEventListener("click", addInput);
         mul.addEventListener("click", addInput);
         div.addEventListener("click", addInput);
+        dot.addEventListener("click", addInput);
         equal.addEventListener("click", addInput);
         del.addEventListener("click", addInput);
     }
