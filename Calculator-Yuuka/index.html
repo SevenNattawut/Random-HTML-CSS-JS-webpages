@@ -10,61 +10,63 @@
 </head>
 <body>
     <div class="calculator">
-        <div class="top"></div>
-        <div class="calculator-body">
-            <div class="display" id="display">
-                
-            </div>
-            <div class="numpad-col">
-                <div class="numpad-row">
-                    <button class="num-btn" id="num9">9</button>
-                    <button class="num-btn" id="num8">8</button>
-                    <button class="num-btn" id="num6">6</button>
+        <div class="top-on" id="top"></div>
+        <div class="cal-area">
+            <div class="calculator-body">
+                <div class="display" id="display">
+                    <!-- Display area -->
                 </div>
-                <div class="numpad-row">
-                    <button class="num-btn" id="num7">7</button>
-                    <button class="num-btn" id="num5">5</button>
-                    <button class="num-btn" id="num3">3</button>
+                <div class="numpad-col">
+                    <div class="numpad-row">
+                        <button class="num-btn" id="num9">9</button>
+                        <button class="num-btn" id="num8">8</button>
+                        <button class="num-btn" id="num6">6</button>
+                    </div>
+                    <div class="numpad-row">
+                        <button class="num-btn" id="num7">7</button>
+                        <button class="num-btn" id="num5">5</button>
+                        <button class="num-btn" id="num3">3</button>
+                    </div>
+                    <div class="numpad-row">
+                        <button class="num-btn" id="num4">4</button>
+                        <button class="num-btn" id="num2">2</button>
+                        <button class="num-btn" id="num1">1</button>
+                    </div>
+                    <button class="num-btn" id="num0">0</button>
                 </div>
-                <div class="numpad-row">
-                    <button class="num-btn" id="num4">4</button>
-                    <button class="num-btn" id="num2">2</button>
-                    <button class="num-btn" id="num1">1</button>
-                </div>
-                <button class="num-btn" id="num0">0</button>
-            </div>
-            <div class="move-up">
-                <div class="mini-btnset">
-                    <div class="mini-btnset-col">
-                        <div class="mini-btnset-row">
-                            <button class="other-btn" id="add">+</button>
-                            <button class="other-btn" id="dif">-</button>
-                            <button class="other-btn" id="mul">*</button>
-                            <button class="other-btn" id="div">/</button>
-                        </div>
-                        <div class="mini-btnset-row">
-                            <button class="other-btn" id="equal">=</button>
-                            <button class="other-btn" id="del">C</button>
+                <div class="move-up">
+                    <div class="mini-btnset">
+                        <div class="mini-btnset-col">
+                            <div class="mini-btnset-row">
+                                <button class="other-btn" id="add">+</button>
+                                <button class="other-btn" id="dif">-</button>
+                                <button class="other-btn" id="mul">*</button>
+                                <button class="other-btn" id="div">/</button>
+                            </div>
+                            <div class="mini-btnset-row">
+                                <button class="other-btn" id="equal">=</button>
+                                <button class="other-btn" id="del">C</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <button class="other-btn" style="position: absolute; margin-top: 550px; transform: rotate(0deg);" id="dot">.</button>
-            <div class="dot" style="margin-right: 250px; margin-top: 20px;"></div>
-            <div class="dot" style="margin-right: 250px; margin-top: 560px;"></div>
-            <div class="right-btn"></div>
-            <div class="switch-btnset">
-                <div class="switch-btnset-sub">
-                    <div class="switch-btn"></div>
-                    <div class="switch-btn"></div>
-                </div>
-                <div class="switch-btnset-sub">
-                    <div class="switch-btn"></div>
-                    <div class="switch-btn"></div>
+                <button class="other-btn" style="position: absolute; margin-top: 550px; transform: rotate(0deg);" id="dot">.</button>
+                <div class="dot" style="margin-right: 250px; margin-top: 20px;"></div>
+                <div class="dot" style="margin-right: 250px; margin-top: 560px;"></div>
+                <div class="right-btn"></div>
+                <div class="switch-btnset">
+                    <div class="switch-btnset-sub">
+                        <div class="switch-btn"></div>
+                        <div class="switch-btn"></div>
+                    </div>
+                    <div class="switch-btnset-sub">
+                        <div class="switch-btn"></div>
+                        <div class="switch-btn"></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="bottom"></div>
+        <div class="bottom-on" id="bottom"></div>
     </div>
 </body>
 <script src="./script.js"></script>

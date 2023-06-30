@@ -9,19 +9,25 @@
     const n7 = document.getElementById("num7");
     const n8 = document.getElementById("num8");
     const n9 = document.getElementById("num9");
-
     const add = document.getElementById("add");
     const sub = document.getElementById("dif");
     const mul = document.getElementById("mul");
     const div = document.getElementById("div");
     const dot = document.getElementById("dot");
-
     const equal = document.getElementById("equal");
     const del = document.getElementById("del");
 
     const display = document.getElementById("display");
 
+    const rightSwitch = document.querySelector(".right-btn");
+    const calBody = document.querySelector(".calculator-body");
+    const calArea = document.querySelector(".cal-area");
+
+    const topCap = document.getElementById("top");
+    const botCap = document.getElementById("bottom");
+
     let displayVal = "";
+    let turnOn = true;
 
     function addInput(event) {
         const btnContent = event.target.textContent;
@@ -67,7 +73,40 @@
         display.innerHTML = displayVal;
     }
 
+    // fold calculator
+    function closeCal() {
+        if (turnOn === true) {
+            turnOn = false;
+            rightSwitch.style.marginLeft = "280px";
+            topCap.classList.toggle("top");
+            topCap.classList.toggle("top-on");
+            botCap.classList.toggle("bottom");
+            botCap.classList.toggle("bottom-on");
+            setTimeout(() => calBody.style.opacity = "0", 300);
+            setTimeout(() => calBody.style.display = "none", 1300);
+            setTimeout(() => {
+                calArea.style.height = "24px"
+            }, 1300);
+        }
+    }
+
+    // unfold calculator
+    function openCal() {
+        if (turnOn === false) {
+            turnOn = true;
+            topCap.classList.toggle("top");
+            topCap.classList.toggle("top-on");
+            botCap.classList.toggle("bottom");
+            botCap.classList.toggle("bottom-on");
+            setTimeout(() => calArea.style.height = "600px", 100);
+            setTimeout(() => calBody.style.display = "flex", 300);
+            setTimeout(() => calBody.style.opacity = "1", 400);
+            setTimeout(() => rightSwitch.style.marginLeft = "330px", 1300);
+        }
+    }
+
     function run() {
+        closeCal();
         n0.addEventListener("click", addInput);
         n1.addEventListener("click", addInput);
         n2.addEventListener("click", addInput);
@@ -85,6 +124,10 @@
         dot.addEventListener("click", addInput);
         equal.addEventListener("click", addInput);
         del.addEventListener("click", addInput);
+        rightSwitch.addEventListener("click", closeCal);
+        topCap.addEventListener("click", openCal);
+        botCap.addEventListener("click", openCal);
+
     }
 
     run()

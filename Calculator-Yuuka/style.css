@@ -28,15 +28,23 @@ body {
     align-items: center;
 }
 
+.cal-area {
+    height: 600px;
+    width: 350px;
+    background-color: rgb(21, 26, 32);
+    transition: height 0.3s ease-in;
+}
+
 .calculator-body {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 350px;
     height: 600px;
-    background-color: rgb(21, 26, 32);
     z-index: 0;
-    
+    transition: opacity 1s;
+
+    opacity: 1;
 }
 
 .top, .bottom {
@@ -82,6 +90,8 @@ body {
     margin-top: 30px;
     margin-left: 330px;
     border: solid 5px rgb(0, 59, 70);
+
+    transition: margin-left 0.3s;
 }
 
 .switch-btnset {
