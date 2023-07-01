@@ -158,6 +158,12 @@ a {
     transform: translate(0, -10px);
 }
 
+.card:hover {
+    -webkit-box-shadow:0 0 20px rgb(182, 182, 182); 
+    -moz-box-shadow: 0 0 20px rgb(182, 182, 182); 
+    box-shadow:0 0 20px rgb(182, 182, 182);
+}
+
 .nav-list {
     list-style-type: none;
     margin: 0;
