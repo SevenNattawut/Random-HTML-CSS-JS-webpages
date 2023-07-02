@@ -55,6 +55,12 @@ body {
     }
 }
 
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 @media screen and (min-width: 601px) {
     .navBar {
         display: flex;
@@ -111,19 +117,6 @@ a {
     display: flex;
     flex-direction: column;
     margin: 0 2em 0;
-    width: 33%;
-}
-
-.left-align {
-    align-items: start;
-}
-
-.center-align {
-    align-items: center !important;
-}
-
-.right-align {
-    align-items: end !important;
 }
 
 .content {
@@ -174,4 +167,10 @@ a {
 
 .nav-member {
     text-decoration: none;
+}
+
+.nav-member-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
 }
