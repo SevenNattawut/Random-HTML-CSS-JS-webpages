@@ -36,11 +36,9 @@
         if (displayVal === "Undefined") {
             displayVal = "";
         }
-
         if ((btnContent === "0" || (isNaN(btnContent) && btnContent !== "-")) && displayVal.length == 0) {
             // input nothing if the first char is 0 or operator (including C)
             new Audio("./asset/typing-fx.mp3").play()
-            return;
         } else if ((btnContent === "+") && displayVal[displayVal.length-1] === "-" && displayVal.length == 1) {
             // if user press + when there is only - in display (negative), change to positive
             displayVal = "";
@@ -53,7 +51,18 @@
             // if user press * or / after * or /, replace the operator
             displayVal = displayVal.slice(0, displayVal.length - 1) + btnContent;
             new Audio("./asset/typing-fx.mp3").play()
-        }else if (btnContent === "C"){
+        } else if ((btnContent === "*" || btnContent === "/") && (displayVal[displayVal.length-1] === "+" || displayVal[displayVal.length-1] === "-")) {
+            // if user press * or / after + or -, replace the operator
+            displayVal = displayVal.slice(0, displayVal.length - 1) + btnContent;
+            new Audio("./asset/typing-fx.mp3").play()
+        } else if ((btnContent === "+" || btnContent === "-") && (displayVal[displayVal.length-1] === "*" || displayVal[displayVal.length-1] === "/") && (displayVal[displayVal.length-2] === "*" || displayVal[displayVal.length-2] === "/")) {
+            // if user input 2 or more consecutive operators (like *+*), replace the operator
+            displayVal = displayVal.slice(0, displayVal.length - 1) + btnContent;
+            new Audio("./asset/typing-fx.mp3").play()
+        } else if ((btnContent === "*" || btnContent === "/") && (displayVal[displayVal.length-1] === "+" || displayVal[displayVal.length-1] === "-") && (displayVal[displayVal.length-2] === "*" || displayVal[displayVal.length-2] === "/")) {
+            // if user press * or / after + or -, and after * or / (1*-/3), skip 
+            new Audio("./asset/typing-fx.mp3").play()
+        } else if (btnContent === "C") {
             displayVal = ""
             new Audio("./asset/clear-fx.mp3").play()
         } else if (btnContent === "=") {
@@ -62,7 +71,6 @@
                 result = "Undefined"
             } else if (!Number.isInteger(result)) {
                 result = result.toFixed(3);
-            } else {
             }
             displayVal = result.toString();
             new Audio("./asset/eval-fx.mp3").play()
@@ -70,12 +78,21 @@
             displayVal += btnContent;
             new Audio("./asset/typing-fx.mp3").play()
         }
+
+        if ((displayVal[displayVal.length-1] === "*" || displayVal[displayVal.length-1] === "/") && (displayVal[displayVal.length-2] === "*" || displayVal[displayVal.length-2] === "/")) {
+            displayVal = displayVal.slice(0, displayVal.length - 2) + btnContent;
+        }
+
         display.innerHTML = displayVal;
     }
 
     // fold calculator
     function closeCal() {
         if (turnOn === true) {
+            // close calculator, clear display
+            displayVal = "";
+            display.innerHTML = "";
+
             rightSwitch.style.marginLeft = "280px";
             topCap.classList.toggle("top");
             topCap.classList.toggle("top-on");
