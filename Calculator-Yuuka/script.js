@@ -29,9 +29,34 @@
     let displayVal = "";
     let turnOn = true;
 
+    // true = found repeated dot
+    function checkRepeatedDot(equation) {
+        // split into array -> reverse -> join back to string
+        const revStr = equation.split("").reverse().join("");
+        let foundOp = false
+        let dotCount = 0;
+
+        console.log(revStr)
+
+        for (let i = 0; i < revStr.length; i++) {
+            const char = revStr[i];
+            if (char === '.') {
+                dotCount++;
+                // Check if dot is repeated
+                if (dotCount >= 1) {
+                    return true; // Repeated dot found
+                }
+            } else if (char === '+' || char === '-' || char === '*' || char === '/') {
+                foundOp = true;
+                break;
+            }
+        }
+          
+        return false;
+    }
+
     function addInput(event) {
         const btnContent = event.target.textContent;
-        console.log(btnContent);
 
         if (displayVal === "Undefined") {
             displayVal = "";
@@ -74,12 +99,16 @@
             }
             displayVal = result.toString();
             new Audio("./asset/eval-fx.mp3").play()
+        } else if (btnContent === "." && checkRepeatedDot(displayVal)) {
+            new Audio("./asset/typing-fx.mp3").play()
         } else {
             displayVal += btnContent;
             new Audio("./asset/typing-fx.mp3").play()
         }
 
         if ((displayVal[displayVal.length-1] === "*" || displayVal[displayVal.length-1] === "/") && (displayVal[displayVal.length-2] === "*" || displayVal[displayVal.length-2] === "/")) {
+            displayVal = displayVal.slice(0, displayVal.length - 2) + btnContent;
+        } else if ((displayVal[displayVal.length-1] === "+" || displayVal[displayVal.length-1] === "-") && (displayVal[displayVal.length-2] === "+" || displayVal[displayVal.length-2] === "-")) {
             displayVal = displayVal.slice(0, displayVal.length - 2) + btnContent;
         }
 
