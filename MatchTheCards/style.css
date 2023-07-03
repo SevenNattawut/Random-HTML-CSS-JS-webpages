@@ -1,0 +1,116 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+
+    color: rgb(255, 255, 255);
+    font-size: 2em;
+
+    padding: 2em;
+    font-family: "Press Start 2P";
+}
+
+.title {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+}
+
+.game-board {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    flex-wrap: nowrap;
+}
+
+.game-board-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 170px;
+    border-radius: 20px;
+    background-color: transparent;
+}
+
+.card-inner {
+    width: 170px;
+    height: 170px;
+    transform-style: preserve-3d;
+    transition: transform .7s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.card-front {
+    position: absolute;
+    backface-visibility: hidden;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: rgb(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+.card-content {
+    position: absolute;
+    transform: rotateY(180deg);
+
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: rgb(44, 44, 44);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+.open {
+    transform: rotateY(180deg);
+}
+
+.corrected {
+    transform: rotateY(180deg);
+}
+
+/* test flipping card
+.card:hover .card-inner{    
+    transform: rotateY(180deg);
+} */
+
+.barrier {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    display: none;
+}
