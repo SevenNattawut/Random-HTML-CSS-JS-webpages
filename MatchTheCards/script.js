@@ -246,14 +246,13 @@
 
     function assignSelection(cardId) {
         selectedCards.push(cardId)
-        console.log(selectedCards[0].id)
         if (selectedCards.length === 2) {
             barrier.style.display = "block";
             setTimeout(() => {
                 checkSelectedCards()
                 selectedCards = []
                 barrier.style.display = "none"
-            }, 1500);          
+            }, 1000);          
         }
     }
 
