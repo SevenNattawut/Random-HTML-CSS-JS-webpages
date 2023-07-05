@@ -235,7 +235,7 @@
     function flipCard(cardElement) {
         const card = cards[cardElement.id];
 
-        if (!card.opened) {
+        if (!card.opened && !card.correct) {
             const backCard = cardElement.querySelector(".card-content");
             backCard.innerHTML = `<img src="./RPGclassIcons/${cards[cardElement.id].className}.svg">`
             cardElement.classList.add("open");
@@ -266,6 +266,8 @@
     
             cardDiv1.classList.add("corrected");
             cardDiv2.classList.add("corrected");
+            cardDiv1.removeEventListener("click", flipCard);
+            cardDiv2.removeEventListener("click", flipCard);
             score ++;
             pts.innerHTML = score;
         }
