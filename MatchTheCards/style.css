@@ -96,10 +96,7 @@ body {
 
 .open {
     transform: rotateY(180deg);
-
-    -webkit-box-shadow:0 0 20px rgb(248, 255, 154); 
-    -moz-box-shadow: 0 0 20px rgb(248, 255, 154); 
-    box-shadow:0 0 20px rgb(248, 255, 154);
+    background-color: rgb(255, 206, 114);
 }
 
 .corrected {
@@ -118,4 +115,18 @@ body {
     height: 100%;
     top: 0%;
     display: none;
+}
+
+.resetBtn {
+    padding: 0.5em;
+
+    font-size: 0.75em;
+    font-family: "Press Start 2P";
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.resetBtn:hover {
+    color: gray;
 }
