@@ -159,6 +159,8 @@
     const turns = document.getElementById("turnNo");
     const pts = document.getElementById("pts");
 
+    const reset = document.querySelector(".resetBtn");
+
     function resetCards() {
         for (const card in cards) {
             cards[card].className = "";
@@ -279,8 +281,19 @@
         turns.innerHTML = turn;
     }
 
+
+
     function run() {
+        reset.addEventListener("click", () => {
+            gameBoard.innerHTML = "";
+            turn = 0;
+            score = 0;
+            turns.innerHTML = "0";
+            pts.innerHTML = "0";
+            fillBoard();
+        });
         fillBoard();
     }
+
     run();
 })();

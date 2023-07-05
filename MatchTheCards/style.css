@@ -125,8 +125,20 @@ body {
     background-color: transparent;
     border: none;
     color: white;
+    transform: translate(0, -10px);
 }
 
 .resetBtn:hover {
     color: gray;
+    transform: translate(0, 0);
+}
+
+.resetBtn::before, .resetBtn::after {
+    content: "-";
+    color: white;
+    margin: 1em;
+}
+
+.resetBtn:hover:before, .resetBtn:hover:after {
+    content: "";
 }
